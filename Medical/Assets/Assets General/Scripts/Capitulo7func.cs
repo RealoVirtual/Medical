@@ -12,7 +12,7 @@ public class Capitulo7func : MonoBehaviour {
 	public GameObject FlechaAzul;
 	public Animator Luz;
 	public GameObject textos7;
-	private float Tiempocap7func = 18f;
+	private float Tiempocap7func = 10f;
 	private bool tiempo77 = true;
 
 	// Use this for initialization
