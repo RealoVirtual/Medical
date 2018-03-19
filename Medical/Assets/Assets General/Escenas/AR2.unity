@@ -14359,7 +14359,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1266644507339292, guid: 3140430836a98e146a32838b410fb414, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3140430836a98e146a32838b410fb414, type: 2}
@@ -27353,7 +27353,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1414756087
 Transform:
   m_ObjectHideFlags: 0
@@ -37609,7 +37609,7 @@ SkinnedMeshRenderer:
   serializedVersion: 2
   m_Quality: 0
   m_UpdateWhenOffscreen: 0
-  m_SkinnedMotionVectors: 1
+  m_SkinnedMotionVectors: 0
   m_Mesh: {fileID: 4300002, guid: 1a287b9eb469cec44a09453599e599bc, type: 3}
   m_Bones:
   - {fileID: 638391515}
