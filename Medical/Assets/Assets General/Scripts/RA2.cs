@@ -14,6 +14,9 @@ public class RA2 : MonoBehaviour {
 	private bool paso6 = true;
 	private bool creditos = true;
 	private bool menura2 = true;
+	public AudioSource PASO1;
+	public AudioSource PASO21;
+	public AudioSource PASO22;
 
 	// Objectos Logicos a los cuales afectara el Script
 	public GameObject Paso1;
@@ -31,23 +34,27 @@ public class RA2 : MonoBehaviour {
 		TRA2 -= Time.deltaTime;
 		if (TRA2 <= 70 && paso1) {
 			Paso1.SetActive (true);
+			//PASO1 = GetComponent<AudioSource>();
+			PASO1.PlayDelayed(8.0F);
 			LapizT.SetActive (true);
 			paso1 = false;
 			print ("Paso1responde");
 		}
-		if (TRA2 <= 60 && paso2) {
+		if (TRA2 <= 53 && paso2) {
 			Paso2.SetActive (true);
+			PASO21.PlayDelayed(5.0F);
+			PASO22.PlayDelayed(11.0F);
 			paso2 = false;
 			Paso1.SetActive (false);
 			print ("Paso2responde");
 		}
-		if (TRA2 <= 50 && paso3) {
+		if (TRA2 <= 30 && paso3) {
 			Paso3.SetActive (true);
 			paso3 = false;
 			Paso2.SetActive (false);
 			print ("Paso3responde");
 		}
-		if (TRA2 <= 40 && paso4) {
+		if (TRA2 <= 30 && paso4) {
 			Paso4.SetActive (true);
 			paso4 = false;
 			Paso3.SetActive (false);
