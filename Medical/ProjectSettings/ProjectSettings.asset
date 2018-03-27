@@ -12,7 +12,7 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: RealoVirtual
-  productName: ToujeoAR
+  productName: ToujeoARUso
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 1, g: 1, b: 1, a: 1}
@@ -162,7 +162,7 @@ PlayerSettings:
   androidSupportedAspectRatio: 0
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
-    Android: com.realovirtual.toujeoAR
+    Android: com.realovirtual.toujeoARUso
     iOS: com.RealoVirtual.ToujeoAR
   buildNumber: {}
   AndroidBundleVersionCode: 1

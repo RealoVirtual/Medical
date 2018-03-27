@@ -5,13 +5,14 @@ using UnityEngine;
 public class RA2 : MonoBehaviour {
 
 	//Variables y parametros del script \bool variable verdadero o falso \float variable de tiempo en numero enteros
-	private float TRA2 = 150f;
+	private float TRA2 = 153f;
 	private bool paso1 = true;
 	private bool paso2 = true;
 	private bool paso3 = true;
 	private bool paso4 = true;
 	private bool paso5 = true;
 	private bool paso6 = true;
+	private bool apruebade =true;
 	private bool creditos = true;
 	private bool menura2 = true;
 	public AudioSource PASO1;
@@ -41,7 +42,11 @@ public class RA2 : MonoBehaviour {
 		LapizT.GetComponent<Animator> ();
 	}
 	void Update () {
-
+		if (TRA2 <= 153 && apruebade) {
+			LapizToujeoP.Play("none");
+			apruebade = false;
+			print ("Paso1responde");
+		}
 
 		TRA2 -= Time.deltaTime;
 		if (TRA2 <= 150 && paso1) {
