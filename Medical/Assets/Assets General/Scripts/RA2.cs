@@ -5,13 +5,19 @@ using UnityEngine;
 public class RA2 : MonoBehaviour {
 
 	//Variables y parametros del script \bool variable verdadero o falso \float variable de tiempo en numero enteros
-	private float TRA2 = 153f;
+	private float TRA2 = 195f;
+	private bool Titulo1 = true;
+	private bool intro11 = true;
+	private bool intro22 = true;
+	private bool intro33 = true;
 	private bool paso1 = true;
 	private bool paso2 = true;
 	private bool paso3 = true;
 	private bool paso4 = true;
 	private bool paso5 = true;
 	private bool paso6 = true;
+	private bool basu6 = true;
+	private bool paso65 = true;
 	private bool apruebade =true;
 	private bool creditos = true;
 	private bool menura2 = true;
@@ -25,12 +31,18 @@ public class RA2 : MonoBehaviour {
 	public AudioSource PASO43;
 	public AudioSource PASO61;
 	// Objectos Logicos a los cuales afectara el Script
+	public GameObject Titulo;
+	public GameObject Intro1;
+	public GameObject Intro2;
+	public GameObject Intro3;
 	public GameObject Paso1;
 	public GameObject Paso2;
 	public GameObject Paso3;
 	public GameObject Paso4;
 	public GameObject Paso5;
 	public GameObject Paso6;
+	public GameObject basurero;
+	public GameObject Paso6text;
 	public GameObject CreditosRa2;
 	public GameObject LapizT;
 	public string Escena_menu2;
@@ -42,8 +54,37 @@ public class RA2 : MonoBehaviour {
 		LapizT.GetComponent<Animator> ();
 	}
 	void Update () {
+		if (TRA2 <= 195 && Titulo1) {
+			Titulo.SetActive (true);
+			//200 - 5s de duracion
+			Titulo1 = false;
+			print ("Introresp");
+		}
+		if (TRA2 <= 185 && intro11) {
+			Intro1.SetActive (true);
+			Titulo.SetActive (false);
+			//120 seg - 17s de duracion
+			intro11 = false;
+			print ("Introresp");
+		}
+		if (TRA2 <= 175 && intro22) {
+			Intro1.SetActive (false);
+			Intro2.SetActive (true);
+			//120 seg - 17s de duracion
+			intro22 = false;
+			print ("Introresp");
+		}
+		if (TRA2 <= 165 && intro33) {
+			Intro2.SetActive (false);
+			Intro3.SetActive (true);
+			//120 seg - 17s de duracion
+			intro33 = false;
+			print ("Introresp");
+		}
 		if (TRA2 <= 153 && apruebade) {
+			LapizT.SetActive (true);
 			LapizToujeoP.Play("none");
+			Intro3.SetActive (false);
 			apruebade = false;
 			print ("Paso1responde");
 		}
@@ -106,8 +147,23 @@ public class RA2 : MonoBehaviour {
 			Paso5.SetActive (false);
 			print ("Paso6responde");
 		}
-		if (TRA2 <= 10 && creditos) {
-			LapizT.SetActive (false);
+		if (TRA2 <= 19 && basu6) {
+			//basu//
+			basurero.SetActive (true);
+			basu6 = false;
+		}
+
+		if (TRA2 <= 15 && paso65) {
+			//basu//
+		basurero.SetActive (false);
+		LapizT.SetActive (false);
+		Paso6text.SetActive (true);
+			paso65 = false;
+		}
+
+			
+		if (TRA2 <= 7 && creditos) {
+			//LapizT.SetActive (false);
 			CreditosRa2.SetActive (true);
 			creditos = false;
 			Paso6.SetActive (false);
