@@ -5,7 +5,7 @@ using UnityEngine;
 public class RA2 : MonoBehaviour {
 
 	//Variables y parametros del script \bool variable verdadero o falso \float variable de tiempo en numero enteros
-	private float TRA2 = 195f;
+	private float TRA2 = 197f;
 	private bool Titulo1 = true;
 	private bool intro11 = true;
 	private bool intro22 = true;
@@ -21,6 +21,13 @@ public class RA2 : MonoBehaviour {
 	private bool apruebade =true;
 	private bool creditos = true;
 	private bool menura2 = true;
+	public AudioSource Tituloau;
+	public AudioSource Intro1au;
+	public AudioSource Intro2au;
+	public AudioSource Intro3au;
+	public AudioSource Intro4au;
+	public AudioSource Intro5au;
+	//public AudioSource Intro6au;
 	public AudioSource PASO1;
 	public AudioSource PASO21;
 	public AudioSource PASO22;
@@ -41,10 +48,13 @@ public class RA2 : MonoBehaviour {
 	public GameObject Paso4;
 	public GameObject Paso5;
 	public GameObject Paso6;
+	public GameObject Paso6titulo;
 	public GameObject basurero;
 	public GameObject Paso6text;
 	public GameObject CreditosRa2;
 	public GameObject LapizT;
+	public GameObject Zooms;
+	public GameObject Cam;
 	public string Escena_menu2;
 	public Animator LapizToujeoP;
 
@@ -54,14 +64,18 @@ public class RA2 : MonoBehaviour {
 		LapizT.GetComponent<Animator> ();
 	}
 	void Update () {
-		if (TRA2 <= 195 && Titulo1) {
+		if (TRA2 <= 197 && Titulo1) {
 			Titulo.SetActive (true);
+			Tituloau.PlayDelayed(2.0F);
 			//200 - 5s de duracion
 			Titulo1 = false;
 			print ("Introresp");
 		}
-		if (TRA2 <= 185 && intro11) {
+		if (TRA2 <= 190 && intro11) {
 			Intro1.SetActive (true);
+			Intro1au.PlayDelayed(1.0F);
+			Intro2au.PlayDelayed(4.0F);
+			Intro3au.PlayDelayed(10.0F);
 			Titulo.SetActive (false);
 			//120 seg - 17s de duracion
 			intro11 = false;
@@ -70,6 +84,7 @@ public class RA2 : MonoBehaviour {
 		if (TRA2 <= 175 && intro22) {
 			Intro1.SetActive (false);
 			Intro2.SetActive (true);
+			Intro4au.PlayDelayed(2.0F);
 			//120 seg - 17s de duracion
 			intro22 = false;
 			print ("Introresp");
@@ -77,6 +92,7 @@ public class RA2 : MonoBehaviour {
 		if (TRA2 <= 165 && intro33) {
 			Intro2.SetActive (false);
 			Intro3.SetActive (true);
+			Intro5au.PlayDelayed(2.0F);
 			//120 seg - 17s de duracion
 			intro33 = false;
 			print ("Introresp");
@@ -86,6 +102,7 @@ public class RA2 : MonoBehaviour {
 			LapizToujeoP.Play("none");
 			Intro3.SetActive (false);
 			apruebade = false;
+			Zooms.SetActive (true);
 			print ("Paso1responde");
 		}
 
@@ -139,12 +156,13 @@ public class RA2 : MonoBehaviour {
 		}
 		if (TRA2 <= 30 && paso6) {
 			// 20 seg duracion
+			Paso5.SetActive (false);
 			Paso6.SetActive (true);
+			Cam.SetActive (false);
 			LapizToujeoP.Play("cap6_sacar-aguja");
 			PASO61.PlayDelayed(5F);
 			LapizT.SetActive (true);
 			paso6 = false;
-			Paso5.SetActive (false);
 			print ("Paso6responde");
 		}
 		if (TRA2 <= 19 && basu6) {
@@ -153,16 +171,17 @@ public class RA2 : MonoBehaviour {
 			basu6 = false;
 		}
 
-		if (TRA2 <= 15 && paso65) {
+		if (TRA2 <= 12 && paso65) {
 			//basu//
 		basurero.SetActive (false);
 		LapizT.SetActive (false);
 		Paso6text.SetActive (true);
+		Paso6titulo.SetActive (false);
 			paso65 = false;
 		}
 
 			
-		if (TRA2 <= 7 && creditos) {
+		if (TRA2 <= 5 && creditos) {
 			//LapizT.SetActive (false);
 			CreditosRa2.SetActive (true);
 			creditos = false;
