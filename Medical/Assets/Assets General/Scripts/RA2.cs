@@ -110,6 +110,7 @@ public class RA2 : MonoBehaviour {
 		if (TRA2 <= 150 && paso1) {
 			Paso1.SetActive (true);
 			//120 seg - 17s de duracion
+			Cam.SetActive (true);
 			LapizToujeoP.Play("destapar_lapiz_cap1");
 			PASO1.PlayDelayed(8.0F);
 			LapizT.SetActive (true);
